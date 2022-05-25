@@ -52,7 +52,7 @@ class MainProgramm {
      * 1. Alle Werte aufaddieren
      * Schreiben Sie eine Methode sumUp, die als Parameter ein Array des Typs int übergeben bekommt. Die Methode sumUp soll die enthaltenen Zahlen addieren und das Ergebnis zurückliefern.
      * @param array
-     * @return
+     * @return Summe aller Zahlen im Array
      */
     private static int sumUp(int[] array){
         int result = 0;
@@ -65,7 +65,7 @@ class MainProgramm {
      * 2. Negative Werte zählen - hierzu bitte in Zeile 11 withNegatives = true setzen.
      * Schreiben Sie eine Methode countNegatives, die als Parameter ein Array des Typs int übergeben bekommt. Die Methode countNegatives soll die negativen Werte in diesem Array zählen und das Ergebnis als zurückgeben.
      * @param array
-     * @return
+     * @return Anzahl der negativen Zahlen im Array
      */
     private static int countNegatives(int[] array){
         int result = 0;
@@ -78,7 +78,7 @@ class MainProgramm {
      * 3. Negative Werte aufsummieren
      * Schreiben Sie eine Methode sumUpNegatives, die als Parameter ein Array des Typs int übergeben bekommt. Die Methode sumUpNegatives soll die Summe der negativen Werte in diesem Array zurückgeben.
      * @param array
-     * @return
+     * @return Summe aller negativen Zahlen im Array
      */
     private static int sumUpNegatives(int[] array){
         int result = 0;
