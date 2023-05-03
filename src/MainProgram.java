@@ -1,4 +1,4 @@
-class MainProgramm {
+class MainProgram {
 
     //Attribute
     private static boolean withNegatives;
