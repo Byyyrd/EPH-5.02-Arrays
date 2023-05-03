@@ -8,7 +8,7 @@ class MainProgram {
     private static int[] numbers;
 
     public static void main(String[] args){
-        withNegatives = false;
+        withNegatives = true;
         maxAbsolute = 100;
         numbers = new int[10];
         fillArray(numbers, withNegatives, maxAbsolute);
@@ -20,6 +20,7 @@ class MainProgram {
         System.out.println("Summe aller Zahlen im Array: " + sumUp(numbers));
         System.out.println("In diesem Array gibt es " + countNegatives(numbers) + " negative Zahlen.");
         System.out.println("Summe der negativen Zahlen: " + sumUpNegatives(numbers));
+        System.out.println("Höhste Zahl: " + findMaximum(numbers) + " mit dem Index: " + findMaximumIndex(numbers));
     }
 
     private static void fillArray(int[] array, boolean wN, int maxA){
@@ -57,6 +58,9 @@ class MainProgram {
     private static int sumUp(int[] array){
         int result = 0;
         //Hier muss Quellcode ergänzt werden.
+        for (int i = 0; i < array.length; i++) {
+            result += array[i];
+        }
         return result;
     }
 
@@ -69,7 +73,11 @@ class MainProgram {
      */
     private static int countNegatives(int[] array){
         int result = 0;
-        //Hier muss Quellcode ergänzt werden.
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0){
+                result++;
+            }
+        }
         return result;
     }
 
@@ -83,6 +91,11 @@ class MainProgram {
     private static int sumUpNegatives(int[] array){
         int result = 0;
         //Hier muss Quellcode ergänzt werden.
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] < 0) {
+                result += array[i];
+            }
+        }
         return result;
     }
 
@@ -93,6 +106,15 @@ class MainProgram {
      * übergeben bekommt und die den größten Wert in diesem Array zurückgibt.
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
      */
+    private static int findMaximum(int[] array){
+        int max = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max){
+                max = array[i];
+            }
+        }
+        return max;
+    }
 
 
 
@@ -101,6 +123,17 @@ class MainProgram {
      * übergeben bekommt und die den Index des größten Werts in diesem Array zurückgibt.
      * Tipp: Versuchen Sie, mit einem Durchlauf durch das Array zu kommen.
      */
+    private static int findMaximumIndex(int[] array){
+        int max = 0;
+        int index = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > max){
+                max = array[i];
+                index = i;
+            }
+        }
+        return index;
+    }
 
 
 
@@ -108,6 +141,16 @@ class MainProgram {
      * Schreiben Sie eine Methode countMaximum, die ein Array des Typs int als Parameter
      * übergeben bekommt und die Häufigkeit der größten Zahl in diesem Array zurückgibt.
      */
+    private static int countMaximum(int[] array){
+        int max = findMaximum(array);
+        int count = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == max){
+                count++;
+            }
+        }
+        return count;
+    }
 
 
 
@@ -116,6 +159,14 @@ class MainProgram {
      * übergeben bekommt. Die Methode isSorted soll true zurückgeben, falls die im Array enthaltenen Werte aufsteigend sortiert sind.
      * Sonst soll false zurückgegeben werden.
      */
+    private static boolean isSorted(int[] array){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] > array[i+1]){
+                return false;
+            }
+        }
+        return true;
+    }
 
 
 
